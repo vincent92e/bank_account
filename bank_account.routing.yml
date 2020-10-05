@@ -1,0 +1,72 @@
+
+bank_account.bank_account_controller_page:
+  path: '/settings/credit_cards'
+  defaults:
+    _controller: '\Drupal\bank_account\Controller\BankAccountController::myPage'
+    _title: 'myPage'
+  requirements:
+    _permission: 'access content'
+
+bank_account.add_card_form:
+  path: '/bank_account/form/add_card'
+  defaults:
+    _form: '\Drupal\bank_account\Form\AddCardForm'
+    _title: 'AddCardForm'
+  requirements:
+    _access: 'TRUE'
+
+bank_account.view_card_form:
+  path: '/bank_account/view/view_cards'
+  defaults:
+    _form: '\Drupal\bank_account\Form\ViewCardForm'
+    _title: 'ViewCardForm'
+  requirements:
+    _access: 'TRUE'
+
+bank_account.update_card_form:
+  path: '/bank_account/view/update_cards/{rid}'
+  defaults:
+    _form: '\Drupal\bank_account\Form\UpdateCardForm'
+    _title: 'UpdateCardForm'
+  requirements:
+    _access: 'TRUE'
+
+bank_account.delete_card_form:
+  path: '/bank_account/delete/card/{rid}'
+  defaults:
+    _form: '\Drupal\bank_account\Form\DeleteCardForm'
+    _title: 'DeleteCardForm'
+  requirements:
+    _access: 'TRUE'
+
+bank_account.add_bank_form:
+  path: '/bank_account/form/add_bank'
+  defaults:
+    _form: '\Drupal\bank_account\Form\AddBankForm'
+    _title: 'AddBankForm'
+  requirements:
+    _access: 'TRUE'
+
+bank_account.view_bank_form:
+  path: '/bank_account/view/view_banks'
+  defaults:
+    _form: '\Drupal\bank_account\Form\ViewBankForm'
+    _title: 'ViewBankForm'
+  requirements:
+    _access: 'TRUE'
+
+bank_account.bank_info_form:
+  path: '/bank_account/view/bank_info/{rid}'
+  defaults:
+    _form: '\Drupal\bank_account\Form\BankDetailsForm'
+    _title: 'BankDetailsForm'
+  requirements:
+    _access: 'TRUE'
+
+bank_account.delete_bank_form:
+  path: '/bank_account/delete/bank/{rid}'
+  defaults:
+    _form: '\Drupal\bank_account\Form\DeleteBankForm'
+    _title: 'DeleteBankForm'
+  requirements:
+    _access: 'TRUE'

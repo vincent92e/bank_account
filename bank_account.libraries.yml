@@ -1,0 +1,6 @@
+bank_account.forms:
+  css:
+    theme:
+      css/bank.account.css: {}
+  js:
+    js/bank.account.js: {}

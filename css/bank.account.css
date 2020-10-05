@@ -1,0 +1,113 @@
+/*
+  Hide radio button (the round disc)
+  we will use just the label to create pushbutton effect
+*/
+input[type=radio] {
+  display:none;
+  margin:10px;
+}
+
+/*
+  Change the look'n'feel of labels (which are adjacent to radiobuttons).
+  Add some margin, padding to label
+*/
+input[type=radio] + label {
+  display:inline-block;
+  margin:-2px;
+  padding: 4px 12px;
+  color: #6c757d;
+  border: 1px solid #6c757d;
+}
+/*
+ Change background color for label next to checked radio button
+ to make it look like highlighted button
+*/
+input[type=radio]:checked + label {
+  background-image: none;
+  color: #FFFFFF;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.js-form-type-radio {
+  width: 50% !important;
+}
+
+.js-form-type-radio label {
+  width: 100% !important;
+  text-align: center;
+  padding: 0.5rem 1rem !important;
+
+}
+
+.card-group div.form-item:nth-child(1) label {
+  border-radius: .25rem 0 0 .25rem !important;
+}
+
+.card-group div.form-item:nth-child(2) label {
+  border-radius: 0 .25rem .25rem 0 !important;
+}
+
+.card-1-details {
+  position: relative;
+  background: -webkit-linear-gradient(135deg, #0f5e9d, #418fce);
+  background: -moz-linear-gradient(135deg, #0f5e9d, #418fce);
+  background: -o-linear-gradient(135deg, #0f5e9d, #418fce);
+  background: -ms-linear-gradient(135deg, #0f5e9d, #418fce);
+  background: linear-gradient(-45deg, #0f5e9d, #418fce);
+}
+
+.card-2-details, .card-3-details {
+  position: relative;
+  background: -webkit-linear-gradient(135deg, #6c6c6b, #9e9e9c);
+  background: -moz-linear-gradient(135deg, #6c6c6b, #9e9e9c);
+  background: -o-linear-gradient(135deg, #6c6c6b, #9e9e9c);
+  background: -ms-linear-gradient(135deg, #6c6c6b, #9e9e9c);
+  background: linear-gradient(-45deg, #6c6c6b, #9e9e9c);
+}
+
+.card-overlay {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.85);
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.type-img {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.card-number input {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.view-card .fa-edit:hover {
+  color: #f8f9fa !important;
+}
+
+form input.no-delete {
+  background: #f1f5f6 !important;
+  color: #2dbe60 !important;
+}
+
+form input.no-delete:hover {
+  color: #2dbe60 !important;
+}
+
+/*.no-bank {*/
+/*  margin-top: 2.844rem !important;*/
+/*  margin-bottom: 2.844rem !important;*/
+/*}*/

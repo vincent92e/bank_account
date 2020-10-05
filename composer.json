@@ -1,0 +1,13 @@
+{
+    "name": "bank_account",
+    "type": "drupal-module",
+    "description": "Module to handle users card and bank informations",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/bank_account",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/bank_account",
+        "source": "http://cgit.drupalcode.org/bank_account",
+    },
+}

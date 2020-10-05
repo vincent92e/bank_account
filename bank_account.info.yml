@@ -1,0 +1,5 @@
+name: 'Bank Account'
+type: module
+description: 'Module to handle users card and bank informations'
+core: 8.x
+package: 'Custom'

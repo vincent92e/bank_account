@@ -1,0 +1,51 @@
+<?php
+
+/**
+ * @file
+ * Contains bank_account.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function bank_account_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the bank_account module.
+    case 'help.page.bank_account':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Module to handle users card and bank informations') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_preprocess_page() for page.html.twig.
+ */
+function bank_account_preprocess_page(array &$variables) {
+  // Get the current path.
+  $path = $current_path = \Drupal::service('path.current')->getPath();
+
+  $longPath = explode('/', $path);
+
+  if (in_array('bank_account', $longPath) || in_array('account_settings', $longPath) || in_array('credit_cards', $longPath)) {
+    $variables['#attached']['library'][] = 'bank_account/bank_account.forms';
+    $variables['#attached']['library'][] = 'accounts/accounts.forms';
+    $variables['#attached']['library'][] = 'transactions/close-modal';
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+//function bank_account_theme() {
+//  return [
+//    'bank_account' => [
+//      'render element' => 'children',
+//    ],
+//  ];
+//}

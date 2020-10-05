@@ -1,0 +1,148 @@
+<?php
+
+/**
+ *   Implements hook_schema().
+ */
+function bank_account_schema() {
+  $schema['bank_account_cards'] = array(
+    'description' => 'Store user card information.',
+    'fields' => [
+      'rid' => array(
+        'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+        'description' => t('Primary Key: Unique row id of each card'),
+      ),
+      'uid' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+        'description' => t('Id of each user'),
+      ),
+      'type' => array(
+        'type' => 'varchar_ascii',
+        'length' => 32,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => t('Card type'),
+      ),
+      'card_number' => array(
+        'type' => 'varchar_ascii',
+        'length' => 32,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => t('Card number'),
+      ),
+      'expiry_date' => array(
+        'type' => 'varchar_ascii',
+        'length' => 8,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => t('Expiry date'),
+      ),
+      'cvv' => array(
+        'type' => 'varchar_ascii',
+        'length' => 4,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => t('CVV'),
+      ),
+      'card_name' => array(
+        'type' => 'varchar_ascii',
+        'length' => 64,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => t('Credit card name'),
+      ),
+      'debit' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'description' => t('Debit(1) or Credit(0)'),
+      ),
+      'default' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'description' => t('Primary card'),
+      ),
+    ],
+    'primary key' => array('rid'),
+  );
+
+
+  $schema['bank_account_banks'] = array(
+      'description' => 'Store user bank information.',
+      'fields' => [
+        'rid' => array(
+          'type' => 'serial',
+          'not null' => TRUE,
+          'unsigned' => TRUE,
+          'description' => t('Primary Key: Unique row id of each bank info'),
+        ),
+        'uid' => array(
+          'type' => 'int',
+          'not null' => TRUE,
+          'unsigned' => TRUE,
+          'description' => t('Id of each user'),
+        ),
+        'type' => array(
+          'type' => 'varchar_ascii',
+          'length' => 16,
+          'not null' => TRUE,
+          'default' => '',
+          'description' => t('Bank type'),
+        ),
+        'bank_country' => array(
+          'type' => 'varchar_ascii',
+          'length' => 64,
+          'not null' => TRUE,
+          'default' => '',
+          'description' => t('Bank Country'),
+        ),
+        'bank_name' => array(
+          'type' => 'varchar_ascii',
+          'length' => 128,
+          'not null' => TRUE,
+          'default' => '',
+          'description' => t('Bank name'),
+        ),
+        'account_name' => array(
+          'type' => 'varchar_ascii',
+          'length' => 128,
+          'not null' => TRUE,
+          'default' => '',
+          'description' => t('Name on account'),
+        ),
+        'account_number' => array(
+          'type' => 'varchar_ascii',
+          'length' => 64,
+          'not null' => TRUE,
+          'default' => '',
+          'description' => t('Account number'),
+        ),
+        'sort_code' => array(
+          'type' => 'varchar_ascii',
+          'length' => 16,
+          'not null' => TRUE,
+          'default' => '',
+          'description' => t('Sort code'),
+        ),
+        'confirmed' => array(
+          'type' => 'int',
+          'not null' => TRUE,
+          'description' => t('Bank information confirmation'),
+        ),
+        'status' => array(
+          'type' => 'int',
+          'not null' => TRUE,
+          'description' => t('Status'),
+        ),
+        'default' => array(
+          'type' => 'int',
+          'not null' => TRUE,
+          'description' => t('Primary card'),
+        ),
+      ],
+      'primary key' => array('rid'),
+    );
+  return $schema;
+}
